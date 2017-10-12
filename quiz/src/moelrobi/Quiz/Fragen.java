@@ -11,15 +11,15 @@ import java.util.ArrayList;
  *
  * @author moelrobi
  */
-class Fragen {
+final class Fragen {
     
-    public ArrayList fragen = new ArrayList();
+    public ArrayList<String> fragen = new ArrayList();
     public Fragen() 
     {
-        
+        addFrage("debug");
     }
-    public ArrayList getList(ArrayList fragen) 
+    public void addFrage(String frage) 
     {
-        return fragen;
+        this.fragen.add(frage);
     }
 }

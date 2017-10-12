@@ -8,8 +8,6 @@ import java.util.ArrayList;
  * @author robin
  */
 public class QuizHelper {
-
-    public static ArrayList<Fragen> fragenListe;
     /**
     * Main class.
     * @param args, for parsing Arguments
@@ -18,7 +16,8 @@ public class QuizHelper {
         //Showing the Frame
         Frame frame = new Frame();
         frame.setVisible(true);
-        System.out.println(fragenListe);
+        Fragen fr = new Fragen();
+        System.out.println(fr.fragen.get(0));
     }
     /**
     *@param Answer, for parsing an Answer
