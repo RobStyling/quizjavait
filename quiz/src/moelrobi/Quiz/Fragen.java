@@ -14,12 +14,15 @@ import java.util.ArrayList;
 final class Fragen {
     
     public ArrayList<String> fragen = new ArrayList();
-    public Fragen() 
-    {
+    public Fragen() {
         addFrage("debug");
     }
-    public void addFrage(String frage) 
-    {
+    //Arrays starts at 0! Remember that Pablo!
+    //Die unteren Funktionen fügen oder entferenen Fragen.
+    public void addFrage(String frage) {
         this.fragen.add(frage);
+    }
+    public void delFrage(int id){
+        this.fragen.remove(id);
     }
 }
