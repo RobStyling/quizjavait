@@ -30,6 +30,9 @@ public class QuizHelper {
     
     public static String GetFragen() 
     {
+        if(counter >= fr.fragen.size()) {
+            rCounter();
+        }
         return fr.fragen.get(counter);
     }
     
@@ -46,5 +49,9 @@ public class QuizHelper {
     
     public static void iCounter() {
         counter++;
+    }
+    
+    public static void rCounter() {
+        counter = 0;
     }
 }
