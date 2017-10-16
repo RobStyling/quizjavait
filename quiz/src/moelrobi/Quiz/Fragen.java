@@ -15,7 +15,8 @@ final class Fragen {
     
     public ArrayList<String> fragen = new ArrayList();
     public Fragen() {
-        addFrage("debug");
+        addFrage("Eine Example Frage");
+        addFrage("Noch eine Example Frage!");
     }
     //Arrays starts at 0! Remember that Pablo!
     //Die unteren Funktionen fügen oder entferenen Fragen.
