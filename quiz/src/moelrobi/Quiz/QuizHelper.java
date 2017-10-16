@@ -1,13 +1,13 @@
 package moelrobi.Quiz;
-
-import java.util.ArrayList;
-
 /**
  * Helper Class for Quiz! :D
  * @version v.1.0
  * @author robin
  */
 public class QuizHelper {
+    
+    public static int counter = 0;
+    public static Fragen fr = new Fragen();
     /**
     * Main class.
     * @param args, for parsing Arguments
@@ -16,7 +16,6 @@ public class QuizHelper {
         //Showing the Frame
         Frame frame = new Frame();
         frame.setVisible(true);
-        Fragen fr = new Fragen();
         System.out.println(fr.fragen.get(0));
     }
     /**
@@ -29,10 +28,9 @@ public class QuizHelper {
         return false;
     }
     
-    public static String[] GetForm() 
+    public static String GetFragen() 
     {
-        String[] errorArrayIndexOutOfBoundsFix = {"Error!"};
-        return errorArrayIndexOutOfBoundsFix;
+        return fr.fragen.get(counter);
     }
     
     /**
@@ -46,4 +44,7 @@ public class QuizHelper {
         return num;
     }
     
+    public static void iCounter() {
+        counter++;
+    }
 }
