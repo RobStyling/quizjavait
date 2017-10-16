@@ -5,8 +5,6 @@
  */
 package moelrobi.Quiz;
 
-import java.util.Arrays;
-
 /**
  *
  * @author robin
@@ -116,12 +114,11 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
-        this.jLabel1.setText(QuizHelper.GetFragen());
+        // TODO add your handling code here:       
     }//GEN-LAST:event_LoadQuestion
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        QuizHelper.iCounter();
-        this.LoadQuestion(null);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -156,10 +153,8 @@ public class Frame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Frame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Frame().setVisible(true);
         });
     }
 

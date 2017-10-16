@@ -1,4 +1,5 @@
 package moelrobi.Quiz;
+import java.util.*;
 /**
  * Helper Class for Quiz! :D
  * @version v.1.0
@@ -7,16 +8,19 @@ package moelrobi.Quiz;
 public class QuizHelper {
     
     public static int counter = 0;
-    public static Fragen fr = new Fragen();
+    
+    public static List<Frage> fragenListe = new ArrayList<>();
     /**
     * Main class.
     * @param args, for parsing Arguments
     */
+    
     public static void main(String[] args) {
         //Showing the Frame
         Frame frame = new Frame();
         frame.setVisible(true);
-        System.out.println(fr.fragen.get(0));
+        FragenHandler fragenHandler = new FragenHandler();
+        System.out.println(fragenListe);
     }
     /**
     *@param Answer, for parsing an Answer
@@ -28,12 +32,12 @@ public class QuizHelper {
         return false;
     }
     
-    public static String GetFragen() 
+    public static Frage GetFragen() 
     {
-        if(counter >= fr.fragen.size()) {
+        if(counter >= fragenListe.size()) {
             rCounter();
         }
-        return fr.fragen.get(counter);
+        return fragenListe.get(counter);
     }
     
     /**
