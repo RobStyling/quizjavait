@@ -114,7 +114,9 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
-        // TODO add your handling code here:       
+        // TODO add your handling code here:
+        Frage fr = QuizHelper.GetFragen();
+        this.jLabel1.setText(fr.getText());
     }//GEN-LAST:event_LoadQuestion
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
