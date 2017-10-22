@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package moelrobi.Quiz;
-
-import java.util.Arrays;
-
 /**
  *
  * @author robin
@@ -61,6 +58,11 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +72,11 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,20 +120,39 @@ public class Frame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        System.out.println(QuizHelper.CheckAnswer(jButton1.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
-        // TODO add your handling code here:
-
+        String fr = QuizHelper.GetFragen();
+        String[] an = QuizHelper.GetAntworten();
+        this.jLabel1.setText(fr);
+        this.jButton1.setText(an[0]);
+        this.jButton5.setText(an[1]);
+        this.jButton3.setText(an[2]);
+        this.jButton4.setText(an[3]);
     }//GEN-LAST:event_LoadQuestion
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     // TODO add your handling code here:
+        // TODO add your handling code here:
+        QuizHelper.iCounter();
+        this.LoadQuestion(null);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        System.out.println(QuizHelper.CheckAnswer(jButton4.getText()));
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(QuizHelper.CheckAnswer(jButton5.getText()));
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        System.out.println(QuizHelper.CheckAnswer(jButton3.getText()));
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,10 +182,8 @@ public class Frame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Frame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Frame().setVisible(true);
         });
     }
 
