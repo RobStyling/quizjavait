@@ -27,15 +27,6 @@ public class QuizHelper {
         Frame frame = new Frame();
         frame.setVisible(true);
     }
-    /**
-    *@param Answer, for parsing an Answer
-    *@return True
-    */
-    public static boolean CheckAnswer(String Answer) 
-    {
-        //Needed to Compile
-        return false;
-    }
     
     public static String GetFragen() 
     {
@@ -71,16 +62,27 @@ public class QuizHelper {
     
     private static boolean CheckA(String a1, String a2, String a3, String a4) {
         if(a1.equals(a2) || a1.equals(a3) || a1.equals(a4)) {
-             return false;
+            return false;
         }
         else if(a2.equals(a3) || a2.equals(a4)){
-                return false;
-         }
+            return false;
+        }
         else if(a3.equals(a4)) {
-                    return false;
-           }
+            return false;
+        }
         else {
             return true;
+        }
+    }
+    
+    public static boolean CheckAnswer(String a) {
+        int raint = fragenListe.get(counter).getRichtigeAntwort();
+        String ra = fragenListe.get(counter).getAntwort(raint);
+        if(ra.equals(a)) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
     /**
