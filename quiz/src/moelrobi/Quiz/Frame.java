@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package moelrobi.Quiz;
-
 /**
  *
  * @author robin
@@ -114,13 +113,19 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
-        // TODO add your handling code here:
-        Frage fr = QuizHelper.GetFragen();
-        this.jLabel1.setText(fr.getText());
+        String fr = QuizHelper.GetFragen();
+        String[] an = QuizHelper.GetAntworten();
+        this.jLabel1.setText(fr);
+        this.jButton1.setText(an[0]);
+        this.jButton5.setText(an[1]);
+        this.jButton3.setText(an[2]);
+        this.jButton4.setText(an[3]);
     }//GEN-LAST:event_LoadQuestion
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        QuizHelper.iCounter();
+        this.LoadQuestion(null);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

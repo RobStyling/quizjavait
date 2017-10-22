@@ -17,19 +17,20 @@ class FragenHandler {
         erzeugeTestFragen();
     }
     
-    public void addFrage(Frage frage){
+    public static void addFrage(Frage frage){
         fragenListe.add(frage);     
     }
     
-    public void erzeugeTestFragen(){
+    public static void erzeugeTestFragen(){
         Frage f1= new Frage();
-        f1.setFragennr(1);
+        f1.setfrn(1);
         f1.setText("Debug");
-        f1.setTitel("hsdjkfh");
-        f1.addAntwort("ks");
-        f1.setRichtigeAntwort(0);
+        f1.addAntwort("Debuging1");
+        f1.addAntwort("Debug2");
+        f1.addAntwort("Debug3");
+        f1.addAntwort("Debug4");
+        f1.setRichtigeAntwort(1);
             
-        fragenListe.add(f1);
-        
+        addFrage(f1);
     } 
 }

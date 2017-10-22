@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package moelrobi.Quiz;
-import java.util.*;
 
 /**
  *
@@ -12,39 +11,45 @@ import java.util.*;
  */
 public class Frage {
     
-    private int Fragennr;
-    private String titel;
+    private int fnr;
     private String text;
-    private int zaehler=0;
     private int richtigeAntwort;
-
-    public int getZaehler() {
-        return zaehler;
-    }
-
-    public void setZaehler(int zaehler) {
-     this.zaehler = zaehler;
-    }
-
+    
+    private int iCounter = 0;
+    
     public int getRichtigeAntwort() {
         return richtigeAntwort;
     }
 
     public void setRichtigeAntwort(int richtigeAntwort) {
-         if(richtigeAntwort<4 & richtigeAntwort>=0){
+         if(richtigeAntwort<5 & richtigeAntwort>=1){
             this.richtigeAntwort = richtigeAntwort;
         }
         
     }
-    private String antworten[]= new String[4];
+    
+    private void iiCounter() {
+            iCounter++;
+    }
+    public String[] antworten = new String[5];
     
     public void addAntwort(String antwort){
-        zaehler = zaehler+1;
-        antworten[zaehler]=antwort;
+        if(iCounter == 0) {
+            antworten[iCounter] = null;
+            iiCounter();
+        }
+        antworten[iCounter] = antwort;
+        iiCounter();
+    }
+    
+    public String getAntwort(int counter)  {
+        if(counter == 0) throw new IllegalArgumentException("Bitte fange anfragen auf Antworten bei 1 an.");
+        String antwort = antworten[counter];
+        return antwort;
     }
 
-    public int getFragennr() {
-        return Fragennr;
+    public int getfNr() {
+        return fnr;
     }
 
     public String getText() {
@@ -55,23 +60,11 @@ public class Frage {
         return antworten;
     }
 
-    public void setFragennr(int Fragennr) {
-        this.Fragennr = Fragennr;
-    }
-
-    public void setTitel(String titel) {
-        this.titel = titel;
+    public void setfrn(int Nr) {
+        this.fnr = Nr;
     }
 
     public void setText(String text) {
         this.text = text;
     }
-
-    public void setAntworten(String[] antworten) {
-        this.antworten = antworten;
-    }
-    
-    
-    
-    
 }
