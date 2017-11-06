@@ -67,23 +67,13 @@ public class QuizHelper {
         else if(a2.equals(a3) || a2.equals(a4)){
             return false;
         }
-        else if(a3.equals(a4)) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        else return !a3.equals(a4);
     }
     
     public static boolean CheckAnswer(String a) {
         int raint = fragenListe.get(counter).getRichtigeAntwort();
         String ra = fragenListe.get(counter).getAntwort(raint);
-        if(ra.equals(a)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return ra.equals(a);
     }
     /**
     * @param Max, for Maximum Number
