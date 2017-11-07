@@ -18,7 +18,7 @@ public class Frage {
 
     public String getImageUrl() {
         if(this.imageUrl == null) {
-            return System.getProperty("user.dir") + "/src/moelrobi/Quiz/res/unknown.jpg";
+            return System.getProperty("user.dir") + "/src/moelrobi/Quiz/res/unknown.png";
         }
         else return imageUrl;
     }

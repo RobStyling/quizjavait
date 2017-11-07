@@ -50,6 +50,7 @@ class FragenHandler {
         f1.addAntwort("Turin");
         f1.addAntwort("Neapel");
         f1.setRichtigeAntwort(1);
+        f1.setImageUrl(null);
         
         
         addFrage(f1);

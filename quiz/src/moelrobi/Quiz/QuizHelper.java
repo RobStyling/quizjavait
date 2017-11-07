@@ -61,8 +61,6 @@ public class QuizHelper {
         antworten[2] = a3;
         antworten[3] = a4;
         
-        //For Debuging!
-        System.out.println(Arrays.toString(antworten));
         return antworten;
     }
     

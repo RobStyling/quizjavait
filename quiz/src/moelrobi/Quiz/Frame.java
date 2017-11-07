@@ -5,6 +5,7 @@
  */
 package moelrobi.Quiz;
 
+import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -97,10 +98,10 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +136,11 @@ public class Frame extends javax.swing.JFrame {
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
         String fr = QuizHelper.GetFragen();
         String[] an = QuizHelper.GetAntworten();
-        ImageIcon  pl = new ImageIcon(QuizHelper.GetImage());
+        ImageIcon pl = new ImageIcon(QuizHelper.GetImage());
+        //Rescaling the Image!
+        Image ps = pl.getImage();
+        Image pd = ps.getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
+        pl = new ImageIcon(pd);
         this.jLabel1.setText(fr);
         this.jButton1.setText(an[0]);
         this.jButton5.setText(an[1]);
