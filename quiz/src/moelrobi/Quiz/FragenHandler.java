@@ -11,12 +11,7 @@ import static moelrobi.Quiz.QuizHelper.fragenListe;
  *
  * @author moelrobi
  */
-class FragenHandler {
-    
-    public FragenHandler() {
-        erzeugeTestFragen();
-    }
-    
+class FragenHandler {    
     public static void addFrage(Frage frage){
         fragenListe.add(frage);     
     }
@@ -30,6 +25,8 @@ class FragenHandler {
         f1.addAntwort("Debug3");
         f1.addAntwort("Debug4");
         f1.setRichtigeAntwort(1);
+        f1.setImageUrl(null);
+        
         
         Frage f2 = new Frage();
         f2.setfrn(2);
@@ -43,4 +40,18 @@ class FragenHandler {
         addFrage(f1);
         addFrage(f2);
     } 
+    public static void prodFragen() 
+    {
+        Frage f1 = new Frage();
+        f1.setfrn(1);
+        f1.setText("Was ist die Hauptstadt Italiens?");
+        f1.addAntwort("Rom");
+        f1.addAntwort("Mailand");
+        f1.addAntwort("Turin");
+        f1.addAntwort("Neapel");
+        f1.setRichtigeAntwort(1);
+        
+        
+        addFrage(f1);
+    }
 }

@@ -23,9 +23,15 @@ public class QuizHelper {
     */
     
     public static void main(String[] args) {
-        FragenHandler.erzeugeTestFragen();
+        if(!Arrays.toString(args).equals("[]")) {
+            if(Arrays.toString(args).equals("[--debug]")) {
+                FragenHandler.erzeugeTestFragen();
+            }
+        }
+        else FragenHandler.prodFragen();
         Frame frame = new Frame();
         frame.setVisible(true);
+        System.out.println("Current Dir:" + System.getProperty("user.dir") + "/src/moelrobi/Quiz/res");
     }
     
     public static String GetFragen() 
@@ -84,6 +90,10 @@ public class QuizHelper {
         else {
             return false;
         }
+    }
+    
+    public static String GetImage() {
+        return fragenListe.get(counter).getImageUrl();
     }
     /**
     * @param Max, for Maximum Number

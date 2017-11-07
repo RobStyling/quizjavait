@@ -14,6 +14,18 @@ public class Frage {
     private int fnr;
     private String text;
     private int richtigeAntwort;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        if(this.imageUrl == null) {
+            return System.getProperty("user.dir") + "/src/moelrobi/Quiz/res/unknown.jpg";
+        }
+        else return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     
     private int iCounter = 0;
     
