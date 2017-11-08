@@ -42,17 +42,27 @@ class FragenHandler {
     } 
     public static void prodFragen() 
     {
-        Frage f1 = new Frage();
-        f1.setfrn(1);
-        f1.setText("Was ist die Hauptstadt Italiens?");
-        f1.addAntwort("Rom");
-        f1.addAntwort("Mailand");
-        f1.addAntwort("Turin");
-        f1.addAntwort("Neapel");
-        f1.setRichtigeAntwort(1);
-        f1.setImageUrl(null);
+        Frage it_hauptstadt = new Frage();
+        it_hauptstadt.setfrn(1);
+        it_hauptstadt.setText("Was ist die Hauptstadt Italiens?");
+        it_hauptstadt.addAntwort("Rom");
+        it_hauptstadt.addAntwort("Mailand");
+        it_hauptstadt.addAntwort("Turin");
+        it_hauptstadt.addAntwort("Neapel");
+        it_hauptstadt.setRichtigeAntwort(1);
+        it_hauptstadt.setImageUrl("it_umriss.png");
         
+        Frage it_vulkan = new Frage();
+        it_vulkan.setfrn(2);
+        it_vulkan.setText("Was ist der höchste Vulkan Europas?");
+        it_vulkan.addAntwort("Narkondam");
+        it_vulkan.addAntwort("Ätna");
+        it_vulkan.addAntwort("Venus");
+        it_vulkan.addAntwort("Eyjafjallajökull");
+        it_vulkan.setRichtigeAntwort(2);
+        it_vulkan.setImageUrl("it_vulkan.png");
         
-        addFrage(f1);
+        addFrage(it_hauptstadt);
+        addFrage(it_vulkan);
     }
 }

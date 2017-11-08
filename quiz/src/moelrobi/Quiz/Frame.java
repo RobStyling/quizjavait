@@ -8,6 +8,7 @@ package moelrobi.Quiz;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,14 +102,17 @@ public class Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -130,7 +134,13 @@ public class Frame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        System.out.println(QuizHelper.CheckAnswer(jButton1.getText()));
+        boolean la = QuizHelper.CheckAnswer(jButton1.getText());
+        if(la == true) {
+            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION, null);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION, null);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
@@ -139,7 +149,7 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon pl = new ImageIcon(QuizHelper.GetImage());
         //Rescaling the Image!
         Image ps = pl.getImage();
-        Image pd = ps.getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
+        Image pd = ps.getScaledInstance(288, 293, java.awt.Image.SCALE_SMOOTH);
         pl = new ImageIcon(pd);
         this.jLabel1.setText(fr);
         this.jButton1.setText(an[0]);
@@ -157,17 +167,35 @@ public class Frame extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        System.out.println(QuizHelper.CheckAnswer(jButton4.getText()));
+        boolean la = QuizHelper.CheckAnswer(jButton4.getText());
+        if(la == true) {
+            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        System.out.println(QuizHelper.CheckAnswer(jButton5.getText()));
+        boolean la = QuizHelper.CheckAnswer(jButton5.getText());
+        if(la == true) {
+            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.out.println(QuizHelper.CheckAnswer(jButton3.getText()));
+        boolean la = QuizHelper.CheckAnswer(jButton3.getText());
+        if(la == true) {
+            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
