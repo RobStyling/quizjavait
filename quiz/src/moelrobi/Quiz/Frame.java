@@ -34,7 +34,6 @@ public class Frame extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -50,20 +49,15 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jButton1.setText("jButton1");
+        jButton1.setPreferredSize(new java.awt.Dimension(73, 33));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("jLabel1");
-
-        jButton2.setText("Weiter");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jButton3.setText("jButton3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +67,7 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jButton4.setText("jButton4");
+        jButton4.setPreferredSize(new java.awt.Dimension(73, 33));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -86,26 +81,29 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(64, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,16 +112,15 @@ public class Frame extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5)
-                    .addComponent(jButton3))
-                .addGap(21, 21, 21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jButton1.getAccessibleContext().setAccessibleName("antwort1");
@@ -137,19 +134,22 @@ public class Frame extends javax.swing.JFrame {
         boolean la = QuizHelper.CheckAnswer(jButton1.getText());
         if(la == true) {
             JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION, null);
+            this.LoadQuestion(null);
         }
         else {
             JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION, null);
+            this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
+         QuizHelper.iCounter();
         String fr = QuizHelper.GetFragen();
         String[] an = QuizHelper.GetAntworten();
         ImageIcon pl = new ImageIcon(QuizHelper.GetImage());
         //Rescaling the Image!
         Image ps = pl.getImage();
-        Image pd = ps.getScaledInstance(288, 293, java.awt.Image.SCALE_SMOOTH);
+        Image pd = ps.getScaledInstance(400, 288, java.awt.Image.SCALE_SMOOTH);
         pl = new ImageIcon(pd);
         this.jLabel1.setText(fr);
         this.jButton1.setText(an[0]);
@@ -159,20 +159,16 @@ public class Frame extends javax.swing.JFrame {
         this.jLabel2.setIcon(pl);
     }//GEN-LAST:event_LoadQuestion
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        QuizHelper.iCounter();
-        this.LoadQuestion(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         boolean la = QuizHelper.CheckAnswer(jButton4.getText());
         if(la == true) {
             JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
         else {
             JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -181,9 +177,11 @@ public class Frame extends javax.swing.JFrame {
         boolean la = QuizHelper.CheckAnswer(jButton5.getText());
         if(la == true) {
             JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
         else {
             JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -192,9 +190,11 @@ public class Frame extends javax.swing.JFrame {
         boolean la = QuizHelper.CheckAnswer(jButton3.getText());
         if(la == true) {
             JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
         else {
             JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
+            this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -233,7 +233,6 @@ public class Frame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

@@ -51,6 +51,7 @@ class FragenHandler {
         it_hauptstadt.addAntwort("Neapel");
         it_hauptstadt.setRichtigeAntwort(1);
         it_hauptstadt.setImageUrl("it_umriss.png");
+        it_hauptstadt.setAuthor("Rob");
         
         Frage it_vulkan = new Frage();
         it_vulkan.setfrn(2);
@@ -61,8 +62,21 @@ class FragenHandler {
         it_vulkan.addAntwort("Eyjafjallajökull");
         it_vulkan.setRichtigeAntwort(2);
         it_vulkan.setImageUrl("it_vulkan.png");
+        it_vulkan.setAuthor("Rob");
+        
+        Frage it_grosstadt = new Frage();
+        it_grosstadt.setfrn(3);
+        it_grosstadt.setText("Welche Stadt in Italien hat die meisten Einwohner?");
+        it_grosstadt.addAntwort("Mailand");
+        it_grosstadt.addAntwort("Venedig");
+        it_grosstadt.addAntwort("Rom");
+        it_grosstadt.addAntwort("Neapel");
+        it_grosstadt.setRichtigeAntwort(1);
+        it_grosstadt.setImageUrl("it_itstadt.jpg");
+        it_grosstadt.setAuthor("Denise");
         
         addFrage(it_hauptstadt);
         addFrage(it_vulkan);
+        addFrage(it_grosstadt);
     }
 }

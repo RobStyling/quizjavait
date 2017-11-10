@@ -15,6 +15,15 @@ public class Frage {
     private String text;
     private int richtigeAntwort;
     private String imageUrl;
+    private String author;
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
     public String getImageUrl() {
         if(this.imageUrl == null) {
