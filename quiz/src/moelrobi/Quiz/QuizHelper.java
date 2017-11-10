@@ -16,7 +16,10 @@ public class QuizHelper {
     private static String a2;
     private static String a3;
     private static String a4;
-
+    
+    public static int right = 0;
+    public static int wrong = 0;
+    
     /**
     * Main class.
     * @param args, for parsing Arguments
@@ -83,9 +86,11 @@ public class QuizHelper {
         int raint = fragenListe.get(counter).getRichtigeAntwort();
         String ra = fragenListe.get(counter).getAntwort(raint);
         if(ra.equals(a)) {
+            right++;
             return true;
         }
         else {
+            wrong++;
             return false;
         }
     }
