@@ -6,6 +6,11 @@
 package moelrobi.Quiz;
 
 import java.awt.Image;
+import java.io.IOException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -40,6 +45,7 @@ public class Frame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Italien Quiz");
@@ -89,6 +95,8 @@ public class Frame extends javax.swing.JFrame {
 
         jLabel4.setText("jLabel4");
 
+        jLabel5.setText("jLabel5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +112,8 @@ public class Frame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -131,14 +141,17 @@ public class Frame extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jButton1.getAccessibleContext().setAccessibleName("antwort1");
@@ -164,19 +177,28 @@ public class Frame extends javax.swing.JFrame {
          QuizHelper.iCounter();
         String fr = QuizHelper.GetFragen();
         String[] an = QuizHelper.GetAntworten();
-        ImageIcon pl = new ImageIcon(QuizHelper.GetImage());
+        String author = QuizHelper.GetAuthor();
+        Image pl = null;
+        ImageIcon pc;
+        try {
+            pl = ImageIO.read(new URL(QuizHelper.GetImage()));
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //Rescaling the Image!
-        Image ps = pl.getImage();
-        Image pd = ps.getScaledInstance(400, 288, java.awt.Image.SCALE_SMOOTH);
-        pl = new ImageIcon(pd);
+        if(pl != null) {
+            Image pd = pl.getScaledInstance(400, 288, java.awt.Image.SCALE_SMOOTH);
+            ImageIcon pc = new ImageIcon(pd);
+        }
         this.jLabel1.setText(fr);
         this.jButton1.setText(an[0]);
         this.jButton5.setText(an[1]);
         this.jButton3.setText(an[2]);
         this.jButton4.setText(an[3]);
-        this.jLabel2.setIcon(pl);
+        this.jLabel2.setIcon(pc);
         this.jLabel3.setText("Richtig: " + QuizHelper.right);
         this.jLabel4.setText("Falsch: " + QuizHelper.wrong);
+        this.jLabel5.setText("Question by: " + author);
     }//GEN-LAST:event_LoadQuestion
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -260,6 +282,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 
 }

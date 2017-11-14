@@ -1,4 +1,7 @@
 package moelrobi.Quiz;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.*;
 /**
  * Helper Class for Quiz! :D
@@ -17,8 +20,14 @@ public class QuizHelper {
     private static String a3;
     private static String a4;
     
+    private static final String url = "jdbc:mysql://5.1.86.234:3306/flbk_rob";
+    private static final String user = "flbk_rob";
+    private static final String password = "no u dont";
+    
     public static int right = 0;
     public static int wrong = 0;
+    
+    public static int points = 0;
     
     /**
     * Main class.
@@ -26,6 +35,13 @@ public class QuizHelper {
     */
     
     public static void main(String[] args) {
+        System.out.println("Connecting database...");
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            System.out.println("Database connected!");
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
+        }
         if(!Arrays.toString(args).equals("[]")) {
             if(Arrays.toString(args).equals("[--debug]")) {
                 FragenHandler.erzeugeTestFragen();
@@ -87,16 +103,22 @@ public class QuizHelper {
         String ra = fragenListe.get(counter).getAntwort(raint);
         if(ra.equals(a)) {
             right++;
+            points = points + 2;
             return true;
         }
         else {
             wrong++;
+            points = points + 1;
             return false;
         }
     }
     
     public static String GetImage() {
         return fragenListe.get(counter).getImageUrl();
+    }
+    
+    public static String GetAuthor() {
+        return fragenListe.get(counter).getAuthor();
     }
     /**
     * @param Max, for Maximum Number

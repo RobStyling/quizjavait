@@ -42,6 +42,17 @@ class FragenHandler {
     } 
     public static void prodFragen() 
     {
+        Frage placeholder = new Frage();
+        placeholder.setfrn(0);
+        placeholder.setText("Du solltest das nicht sehen.");
+        placeholder.addAntwort("Richtig!");
+        placeholder.addAntwort("Falsch!");
+        placeholder.addAntwort("Falsch!");
+        placeholder.addAntwort("Falsch!");
+        placeholder.setRichtigeAntwort(1);
+        placeholder.setImageUrl(null);
+        placeholder.setAuthor(null);
+        
         Frage it_hauptstadt = new Frage();
         it_hauptstadt.setfrn(1);
         it_hauptstadt.setText("Was ist die Hauptstadt Italiens?");
