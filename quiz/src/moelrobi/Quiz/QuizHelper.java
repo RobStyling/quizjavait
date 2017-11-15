@@ -2,6 +2,7 @@ package moelrobi.Quiz;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 /**
  * Helper Class for Quiz! :D
@@ -28,6 +29,9 @@ public class QuizHelper {
     public static int wrong = 0;
     
     public static int points = 0;
+
+    public static Frame frame;
+    public static FinishedFrame frame2;
     
     /**
     * Main class.
@@ -35,28 +39,22 @@ public class QuizHelper {
     */
     
     public static void main(String[] args) {
-        System.out.println("Connecting database...");
-
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            System.out.println("Database connected!");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
         if(!Arrays.toString(args).equals("[]")) {
             if(Arrays.toString(args).equals("[--debug]")) {
                 FragenHandler.erzeugeTestFragen();
             }
         }
         else FragenHandler.prodFragen();
-        Frame frame = new Frame();
+        frame = new Frame();
         frame.setVisible(true);
-        System.out.println("Current Dir:" + System.getProperty("user.dir") + "/src/moelrobi/Quiz/res");
     }
     
     public static String GetFragen() 
     {
         if(counter >= fragenListe.size()) {
-            rCounter();
+            frame.setVisible(false);
+            frame2 = new FinishedFrame();
+            frame2.setVisible(true);
         }
         return fragenListe.get(counter).getText();
     }
@@ -137,5 +135,24 @@ public class QuizHelper {
     
     private static void rCounter() {
         counter = 0;
+    }
+
+    public static void InsertScore(String name, int points) {
+        System.out.println("Connecting database...");
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            System.out.println("Database connected!");
+            Statement st = connection.createStatement(); 
+            st.executeUpdate("INSERT INTO quiz VALUES (null,'" + name +"',"+ points + ")"); 
+
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
+        }
+    }
+    
+    public static void RestartQuiz() {
+        rCounter();
+        frame2.setVisible(false);
+        frame = new Frame();
+        frame.setVisible(true);
     }
 }

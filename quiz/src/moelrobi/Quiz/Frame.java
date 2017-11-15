@@ -164,17 +164,15 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean la = QuizHelper.CheckAnswer(jButton1.getText());
         if(la == true) {
-            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION, null);
             this.LoadQuestion(null);
         }
         else {
-            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION, null);
             this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LoadQuestion(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_LoadQuestion
-         QuizHelper.iCounter();
+        QuizHelper.iCounter();
         String fr = QuizHelper.GetFragen();
         String[] an = QuizHelper.GetAntworten();
         String author = QuizHelper.GetAuthor();
@@ -186,10 +184,8 @@ public class Frame extends javax.swing.JFrame {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Rescaling the Image!
-        if(pl != null) {
-            Image pd = pl.getScaledInstance(400, 288, java.awt.Image.SCALE_SMOOTH);
-            ImageIcon pc = new ImageIcon(pd);
-        }
+        Image pd = pl.getScaledInstance(400, 288, java.awt.Image.SCALE_SMOOTH);
+        pc = new ImageIcon(pd);
         this.jLabel1.setText(fr);
         this.jButton1.setText(an[0]);
         this.jButton5.setText(an[1]);
@@ -205,11 +201,9 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean la = QuizHelper.CheckAnswer(jButton4.getText());
         if(la == true) {
-            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
         else {
-            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -218,11 +212,9 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean la = QuizHelper.CheckAnswer(jButton5.getText());
         if(la == true) {
-            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
         else {
-            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -231,11 +223,9 @@ public class Frame extends javax.swing.JFrame {
         // TODO add your handling code here:
         boolean la = QuizHelper.CheckAnswer(jButton3.getText());
         if(la == true) {
-            JOptionPane.showMessageDialog(null, "Richtig!", "Richtig!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
         else {
-            JOptionPane.showMessageDialog(null, "Falsch!", "Falsch!", JOptionPane.OK_OPTION);
             this.LoadQuestion(null);
         }
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -44,13 +44,13 @@ class FragenHandler {
     {
         Frage placeholder = new Frage();
         placeholder.setfrn(0);
-        placeholder.setText("Du solltest das nicht sehen.");
+        placeholder.setText("Du solltest das nicht sehen. Gratis Punkte für dich!");
         placeholder.addAntwort("Richtig!");
         placeholder.addAntwort("Falsch!");
-        placeholder.addAntwort("Falsch!");
-        placeholder.addAntwort("Falsch!");
+        placeholder.addAntwort("Falsch2!");
+        placeholder.addAntwort("Falsch3!");
         placeholder.setRichtigeAntwort(1);
-        placeholder.setImageUrl(null);
+        placeholder.setImageUrl("http://5.1.86.234/img/it_unkown.jpg");
         placeholder.setAuthor(null);
         
         Frage it_hauptstadt = new Frage();
@@ -61,7 +61,7 @@ class FragenHandler {
         it_hauptstadt.addAntwort("Turin");
         it_hauptstadt.addAntwort("Neapel");
         it_hauptstadt.setRichtigeAntwort(1);
-        it_hauptstadt.setImageUrl("it_umriss.png");
+        it_hauptstadt.setImageUrl("http://5.1.86.234/img/it_karte.png");
         it_hauptstadt.setAuthor("Rob");
         
         Frage it_vulkan = new Frage();
@@ -72,7 +72,7 @@ class FragenHandler {
         it_vulkan.addAntwort("Venus");
         it_vulkan.addAntwort("Eyjafjallajökull");
         it_vulkan.setRichtigeAntwort(2);
-        it_vulkan.setImageUrl("it_vulkan.png");
+        it_vulkan.setImageUrl("http://5.1.86.234/img/it_vulkan.jpg");
         it_vulkan.setAuthor("Rob");
         
         Frage it_grosstadt = new Frage();
@@ -83,9 +83,10 @@ class FragenHandler {
         it_grosstadt.addAntwort("Rom");
         it_grosstadt.addAntwort("Neapel");
         it_grosstadt.setRichtigeAntwort(1);
-        it_grosstadt.setImageUrl("it_itstadt.jpg");
+        it_grosstadt.setImageUrl("http://5.1.86.234/img/it_itstadt.jpg");
         it_grosstadt.setAuthor("Denise");
         
+        addFrage(placeholder);
         addFrage(it_hauptstadt);
         addFrage(it_vulkan);
         addFrage(it_grosstadt);
