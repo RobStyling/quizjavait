@@ -86,9 +86,117 @@ class FragenHandler {
         it_grosstadt.setImageUrl("http://5.1.86.234/img/it_itstadt.jpg");
         it_grosstadt.setAuthor("Denise");
         
+        Frage it_spagetti = new Frage();
+        it_spagetti.setfrn(4);
+        it_spagetti.setText("Wie viel Pasta isst der Durschnittsitaliener?");
+        it_spagetti.addAntwort("26kg");
+        it_spagetti.addAntwort("24kg");
+        it_spagetti.addAntwort("20kg");
+        it_spagetti.addAntwort("28kg");
+        it_spagetti.setRichtigeAntwort(1);
+        it_spagetti.setImageUrl("http://5.1.86.234/img/it_spag.jpeg");
+        it_spagetti.setAuthor("Felix");
+        
+        Frage it_flaeche = new Frage();
+        it_flaeche.setfrn(5);
+        it_flaeche.setText("Wie groß ist die Fläche Italiens?");
+        it_flaeche.addAntwort("300.000km²");
+        it_flaeche.addAntwort("200.000km²");
+        it_flaeche.addAntwort("400.000km²");
+        it_flaeche.addAntwort("250.000km²");
+        it_flaeche.setRichtigeAntwort(1);
+        it_flaeche.setImageUrl("http://5.1.86.234/img/it_karte.png");
+        it_flaeche.setAuthor("Lukas Oe");
+        
+        Frage it_gruendung = new Frage();
+        it_gruendung.setfrn(6);
+        it_gruendung.setText("Wann fand die Gründung Italliens Stadt?");
+        it_gruendung.addAntwort("1861");
+        it_gruendung.addAntwort("1912");
+        it_gruendung.addAntwort("1823");
+        it_gruendung.addAntwort("1760");
+        it_gruendung.setRichtigeAntwort(1);
+        it_gruendung.setImageUrl("http://5.1.86.234/img/it_flag.jpg");
+        it_gruendung.setAuthor("Lukas Oe");
+        
+        Frage it_vorwahl = new Frage();
+        it_vorwahl.setfrn(7);
+        it_vorwahl.setText("Wie lautet die Vorwahl Italiens?");
+        it_vorwahl.addAntwort("+39");
+        it_vorwahl.addAntwort("+49");
+        it_vorwahl.addAntwort("+1");
+        it_vorwahl.addAntwort("+12");
+        it_vorwahl.setRichtigeAntwort(1);
+        it_vorwahl.setImageUrl("http://5.1.86.234/img/it_telefon.jpg");
+        it_vorwahl.setAuthor("Denis");
+        
+        Frage it_sprache = new Frage();
+        it_sprache.setfrn(8);
+        it_sprache.setText("Welche Sprache Spricht man in Italien?");
+        it_sprache.addAntwort("Italienisch");
+        it_sprache.addAntwort("Französisch");
+        it_sprache.addAntwort("Deutsch");
+        it_sprache.addAntwort("Spanisch");
+        it_sprache.setRichtigeAntwort(1);
+        it_sprache.setImageUrl("http://5.1.86.234/img/it_sprechen.jpg");
+        it_sprache.setAuthor("Denis");
+        
+        Frage it_wm = new Frage();
+        it_wm.setfrn(9);
+        it_wm.setText("Wie oft wurde Italien Weltmeister?");
+        it_wm.addAntwort("Vier Mal");
+        it_wm.addAntwort("Fünf Mal");
+        it_wm.addAntwort("Neun Mal");
+        it_wm.addAntwort("Jeff");
+        it_wm.setRichtigeAntwort(1);
+        it_wm.setImageUrl("http://5.1.86.234/img/it_ball.jpg");
+        it_wm.setAuthor("Mattis");
+        
+        Frage it_ausbruch = new Frage();
+        it_ausbruch.setfrn(10);
+        it_ausbruch.setText("Wann brach der Ätna zuletzt aus?");
+        it_ausbruch.addAntwort("2012");
+        it_ausbruch.addAntwort("2013");
+        it_ausbruch.addAntwort("2002");
+        it_ausbruch.addAntwort("2008");
+        it_ausbruch.setRichtigeAntwort(1);
+        it_ausbruch.setImageUrl("http://5.1.86.234/img/it_vulkan.jpg");
+        it_ausbruch.setAuthor("Denise");
+        
+        Frage it_mafia = new Frage();
+        it_mafia.setfrn(11);
+        it_mafia.setText("In welcher italienischen Region hat die Mafia ihre Wurzeln?");
+        it_mafia.addAntwort("Sizilien");
+        it_mafia.addAntwort("Toskana");
+        it_mafia.addAntwort("Lombardei");
+        it_mafia.addAntwort("Latium");
+        it_mafia.setRichtigeAntwort(1);
+        it_mafia.setImageUrl("http://5.1.86.234/img/it_mafia.jpg");
+        it_mafia.setAuthor("Abdul und Emre");
+        
+        Frage it_wmdabei = new Frage();
+        it_wmdabei.setfrn(11);
+        it_wmdabei.setText("Ist Italien bei der WM dabei?");
+        it_wmdabei.addAntwort("Ja");
+        it_wmdabei.addAntwort("Nein");
+        it_wmdabei.addAntwort("Placeholder");
+        it_wmdabei.addAntwort("Same");
+        it_wmdabei.setRichtigeAntwort(1);
+        it_wmdabei.setImageUrl("http://5.1.86.234/img/it_ball.jpg");
+        it_wmdabei.setAuthor("Rob");
+        
         addFrage(placeholder);
         addFrage(it_hauptstadt);
         addFrage(it_vulkan);
         addFrage(it_grosstadt);
+        addFrage(it_spagetti);
+        addFrage(it_flaeche);
+        addFrage(it_gruendung);
+        addFrage(it_vorwahl);
+        addFrage(it_sprache);
+        addFrage(it_wm);
+        addFrage(it_ausbruch);
+        addFrage(it_mafia);
+        addFrage(it_wmdabei);
     }
 }
