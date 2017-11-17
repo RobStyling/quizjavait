@@ -1,4 +1,9 @@
 package moelrobi.Quiz;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 /**
  * Helper Class for Quiz! :D
@@ -16,22 +21,41 @@ public class QuizHelper {
     private static String a2;
     private static String a3;
     private static String a4;
+  
+    private static final String url = "jdbc:mysql://5.1.86.234:3306/flbk_rob";
+    private static final String user = "flbk_rob";
+    private static final String password = "no u dont";
+    
+    public static int right = 0;
+    public static int wrong = 0;
+    
+    public static int points = 0;
 
+    public static Frame frame;
+    public static FinishedFrame frame2;
+    
     /**
     * Main class.
     * @param args, for parsing Arguments
     */
     
     public static void main(String[] args) {
-        FragenHandler.erzeugeTestFragen();
-        Frame frame = new Frame();
+        if(!Arrays.toString(args).equals("[]")) {
+            if(Arrays.toString(args).equals("[--debug]")) {
+                FragenHandler.erzeugeTestFragen();
+            }
+        }
+        else FragenHandler.prodFragen();
+        frame = new Frame();
         frame.setVisible(true);
     }
     
     public static String GetFragen() 
     {
         if(counter >= fragenListe.size()) {
-            rCounter();
+            frame.setVisible(false);
+            frame2 = new FinishedFrame();
+            frame2.setVisible(true);
         }
         return fragenListe.get(counter).getText();
     }
@@ -55,8 +79,6 @@ public class QuizHelper {
         antworten[2] = a3;
         antworten[3] = a4;
         
-        //For Debuging!
-        System.out.println(Arrays.toString(antworten));
         return antworten;
     }
     
@@ -67,13 +89,35 @@ public class QuizHelper {
         else if(a2.equals(a3) || a2.equals(a4)){
             return false;
         }
-        else return !a3.equals(a4);
+        else if(a3.equals(a4)) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     
     public static boolean CheckAnswer(String a) {
         int raint = fragenListe.get(counter).getRichtigeAntwort();
         String ra = fragenListe.get(counter).getAntwort(raint);
-        return ra.equals(a);
+        if(ra.equals(a)) {
+            right++;
+            points = points + 2;
+            return true;
+        }
+        else {
+            wrong++;
+            points = points + 1;
+            return false;
+        }
+    }
+    
+    public static String GetImage() {
+        return fragenListe.get(counter).getImageUrl();
+    }
+    
+    public static String GetAuthor() {
+        return fragenListe.get(counter).getAuthor();
     }
     /**
     * @param Max, for Maximum Number
@@ -92,5 +136,26 @@ public class QuizHelper {
     
     private static void rCounter() {
         counter = 0;
+    }
+    public static void InsertScore(String name, int points) {
+        System.out.println("Connecting database...");
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            System.out.println("Database connected!");
+            Statement st = connection.createStatement(); 
+            st.executeUpdate("INSERT INTO quiz VALUES (null,'" + name +"',"+ points + ")"); 
+
+        } catch (SQLException e) {
+            throw new IllegalStateException("Cannot connect the database!", e);
+        }
+    }
+    
+    public static void RestartQuiz() {
+        rCounter();
+        frame2.setVisible(false);
+        points = 0;
+        right = 0;
+        wrong = 0;
+        frame = new Frame();
+        frame.setVisible(true);
     }
 }
