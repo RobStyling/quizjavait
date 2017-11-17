@@ -1,4 +1,5 @@
 package moelrobi.Quiz;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class QuizHelper {
     private static String a2;
     private static String a3;
     private static String a4;
-    
+  
     private static final String url = "jdbc:mysql://5.1.86.234:3306/flbk_rob";
     private static final String user = "flbk_rob";
     private static final String password = "no u dont";
@@ -136,7 +137,6 @@ public class QuizHelper {
     private static void rCounter() {
         counter = 0;
     }
-
     public static void InsertScore(String name, int points) {
         System.out.println("Connecting database...");
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
@@ -152,6 +152,9 @@ public class QuizHelper {
     public static void RestartQuiz() {
         rCounter();
         frame2.setVisible(false);
+        points = 0;
+        right = 0;
+        wrong = 0;
         frame = new Frame();
         frame.setVisible(true);
     }

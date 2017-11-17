@@ -73,7 +73,6 @@ public class Frame extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
         jButton4.setText("jButton4");
         jButton4.setPreferredSize(new java.awt.Dimension(73, 33));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
